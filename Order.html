@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Place Order - Chop Nigerian Cuisine</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <div class="logo">C</div>
+      <div class="brand-text"><strong>Chop Nigerian Cuisine</strong><span>Dining · Catering · Events</span></div>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a class="active" href="order.html">Place Order</a>
+      <a href="catering.html">Catering</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container content">
+  <h1>Place Your Order</h1>
+
+  <form id="orderForm">
+    <label>Full Name<input type="text" id="oName" required></label>
+    <label>Phone Number<input type="tel" id="oPhone" required></label>
+    <label>Email<input type="email" id="oEmail"></label>
+    <label>Order Type
+      <select id="oPickup">
+        <option value="pickup">Pickup</option>
+        <option value="delivery">Delivery</option>
+      </select>
+    </label>
+    <label>Order Details<textarea id="oDetails" rows="4" required></textarea></label>
+    <button class="btn" type="submit">Submit Order</button>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="year4"></span> Chop Nigerian Cuisine</div>
+</footer>
+
+<script src="Script.js"></script>
+</body>
+</html>

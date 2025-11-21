@@ -1,0 +1,223 @@
+/* ===============================
+   GLOBAL RESETS
+================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #f8f8f8;
+  color: #111;
+  line-height: 1.5;
+}
+
+/* ===============================
+   CONTAINER
+================================*/
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1.2rem;
+}
+
+/* ===============================
+   HEADER
+================================*/
+.site-header {
+  background: #ffffffd9;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.8rem 0;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  background: #7a9b0a;
+  color: white;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px #7a9b0a55;
+}
+
+.brand-text span {
+  font-size: 0.8rem;
+  color: #444;
+}
+
+.main-nav {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 10px;
+  color: #222;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  background: #7a9b0a15;
+}
+
+.nav-link.active {
+  background: #7a9b0a;
+  color: white;
+}
+
+/* ===============================
+   HERO SECTION
+================================*/
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ⭐ IMAGE TAG FROM USER */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.12);
+  filter: brightness(0.8) contrast(1.12) saturate(1.15);
+  transition: transform 1.5s ease-in-out;
+}
+
+/* Zoom animation on hover */
+.hero-section:hover .hero-img {
+  transform: scale(1.16);
+}
+
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.7)
+  );
+  backdrop-filter: blur(4px);
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  top: 43%;
+  transform: translateY(-50%);
+}
+
+.title {
+  font-size: 3.3rem;
+  color: white;
+  font-family: "Playfair Display", serif;
+  text-shadow: 0 6px 25px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+  color: #eaeaea;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.6rem;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.6);
+}
+
+/* CTA Button */
+.btn {
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #7a9b0a, #b33);
+  color: white;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-6px) scale(1.03);
+  opacity: 0.95;
+}
+
+/* ===============================
+   FLOATING ACTION BUTTON
+================================*/
+.fab {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  padding: 1rem 1.3rem;
+  background: #7a9b0a;
+  color: white;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 999;
+  transition: 0.3s ease;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+
+.fab:hover {
+  transform: scale(1.09);
+}
+
+/* ===============================
+   ANIMATIONS
+================================*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s forwards 0.4s;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s forwards 0.8s;
+}
+
+.fade-in-btn {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s forwards 1.1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

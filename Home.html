@@ -1,68 +1,65 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chop Nigerian Cuisine</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="Style.css" />
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <div class="logo">C</div>
-        <div class="brand-text">
-          <strong>Chop Nigerian Cuisine</strong>
-          <span>Dining · Catering · Events</span>
-        </div>
-      </a>
-
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="menu.html" class="nav-link">Menu</a>
-        <a href="order.html" class="nav-link">Place Order</a>
-        <a href="catering.html" class="nav-link">Catering</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <h1>Authentic Nigerian dining & professional catering</h1>
-      <p class="lead">
-        We serve delicious Nigerian dishes and cater weddings, events, and private functions.
-      </p>
-      <a class="btn" href="order.html">Place an Order</a>
-    </section>
-
-    <section class="grid-3">
-      <div class="card">
-        <h3>Event Catering</h3>
-        <p>Perfect for weddings, birthdays, corporate gatherings and more.</p>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="Home.html">
+      <div class="logo">C</div>
+      <div class="brand-text">
+        <strong>Chop Nigerian Cuisine</strong>
+        <span>Dining · Catering · Events</span>
       </div>
+    </a>
 
-      <div class="card">
-        <h3>Traditional Meals</h3>
-        <p>Enjoy authentic Nigerian meals prepared fresh daily.</p>
-      </div>
+    <nav class="main-nav">
+      <a class="nav-link active" href="Home.html">Home</a>
+      <a class="nav-link" href="About.html">About</a>
+      <a class="nav-link" href="Menu.html">Menu</a>
+      <a class="nav-link" href="Order.html">Place Order</a>
+      <a class="nav-link" href="Catering.html">Catering</a>
+      <a class="nav-link" href="Contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-      <div class="card">
-        <h3>Pickup & Delivery</h3>
-        <p>Convenient meal ordering options for all customers.</p>
-      </div>
-    </section>
-  </main>
+<!-- ============================
+     HERO SECTION WITH IMAGE TAG
+============================= -->
 
-  <footer class="site-footer">
-    <div class="container">
-      © <span id="year"></span> Chop Nigerian Cuisine
-    </div>
-  </footer>
+<section class="hero-section">
 
-  <script src="js/main.js"></script>
+  <!-- ⭐ THIS IS THE IMAGE TAG YOU REQUESTED -->
+  <img
+    src="Images/stock.jpg"
+    alt="Chop Nigerian Cuisine Food Image"
+    class="hero-img"
+  />
+
+  <!-- Dark overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Hero text / content -->
+  <div class="hero-content container">
+    <h1 class="title fade-in">Chop Nigerian Cuisine</h1>
+    <p class="subtitle fade-in-delay">
+      Authentic Nigerian Dining & Premium Catering Services
+    </p>
+    <a href="Order.html" class="btn fade-in-btn">Place an Order</a>
+  </div>
+
+</section>
+
+<!-- Floating button -->
+<div class="fab" id="fab">Order Now</div>
+
+<script src="Script.js"></script>
 </body>
 </html>

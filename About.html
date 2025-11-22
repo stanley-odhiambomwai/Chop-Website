@@ -1,128 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>About Us - Chop Nigerian Cuisine</title>
-  <link rel="stylesheet" href="Style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About Us - Chop Nigerian Cuisine</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="Home.html">
+          <div class="logo">C</div>
+          <div class="brand-text">
+            <strong>Chop Nigerian Cuisine</strong
+            ><span>Dining · Catering · Events</span>
+          </div>
+        </a>
+        <nav class="main-nav">
+          <a href="Home.html">Home</a>
+          <a class="active" href="About.html">About</a>
+          <a href="Menu.html">Menu</a>
+          <a href="About.html">Place Order</a>
+          <a href="Catering.html">Catering</a>
+          <a href="Contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="Home.html">
-      <div class="logo">C</div>
-      <div class="brand-text"><strong>Chop Nigerian Cuisine</strong><span>Dining · Catering · Events</span></div>
-    </a>
-    <nav class="main-nav">
-      <a href="Home.html">Home</a>
-      <a class="active" href="About.html">About</a>
-      <a href="Menu.html">Menu</a>
-      <a href="About.html">Place Order</a>
-      <a href="Catering.html">Catering</a>
-      <a href="Contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ============================
+    <!-- ============================
      ABOUT HERO SECTION
 ============================= -->
-<section class="about-hero">
+    <section class="about-hero">
+      <!-- Background image from your flyer -->
+      <div
+        class="about-hero-bg parallax-bg"
+        style="background-image: url('/Images/stock3.webp')"
+      ></div>
 
-  <!-- Background image from your flyer -->
-  <div class="about-hero-bg parallax-bg"
-       style="background-image:url('/Images/stock3.webp');">
-  </div>
+      <!-- Overlay -->
+      <div class="about-hero-overlay"></div>
 
-  <!-- Overlay -->
-  <div class="about-hero-overlay"></div>
+      <!-- Hero Content -->
+      <div class="container about-hero-content">
+        <div class="about-left">
+          <!-- Rotating circular food collage -->
+          <div class="food-collage">
+            <img src="Images/stock4.jpeg" class="circle-img circle-1" />
+            <img src="Images/stock5.jpeg" class="circle-img circle-2" />
+            <img src="Images/stock.jpg" class="circle-img circle-3" />
+          </div>
 
-  <!-- Hero Content -->
-  <div class="container about-hero-content">
+          <!-- About short intro box -->
+          <div class="about-intro glass-card fade-in">
+            <h2>Who We Are</h2>
+            <p>
+              Chop Nigerian Cuisine is dedicated to bringing authentic
+              traditional Nigerian flavors to life with a perfect blend of
+              warmth, hospitality, and culinary artistry. Whether it’s dine-in,
+              events, or catering—our experience is unforgettable.
+            </p>
+          </div>
+        </div>
 
-    <div class="about-left">
+        <!-- Right panel -->
+        <div class="about-right glass-card fade-in-delay">
+          <h1 class="about-title">Our Story</h1>
+          <p>
+            Over the years, Chop Nigerian Cuisine has become a cultural
+            landmark, serving carefully crafted dishes inspired by generations
+            of Nigerian tradition. Our team takes pride in preparing meals with
+            passion, creativity, and respect for authentic taste.
+          </p>
 
-      <!-- Rotating circular food collage -->
-      <div class="food-collage">
-        <img src="Images/stock4.jpeg" class="circle-img circle-1">
-        <img src="Images/stock5.jpeg" class="circle-img circle-2">
-        <img src="Images/stock.jpg" class="circle-img circle-3">
+          <p>
+            From Jollof Rice to Suya, Asun, Moi Moi, and an exciting range of
+            soups, we redefine excellence with every dish. Whether you're
+            planning an event or dining with loved ones, Chop Nigerian Cuisine
+            brings you comfort, flavor, and elegance.
+          </p>
+          <br />
+          <a href="Menu.html" class="btn about-btn">Explore Our Menu</a>
+        </div>
       </div>
+    </section>
 
-      <!-- About short intro box -->
-      <div class="about-intro glass-card fade-in">
-        <h2>Who We Are</h2>
-        <p>
-          Chop Nigerian Cuisine is dedicated to bringing authentic traditional Nigerian flavors to life 
-          with a perfect blend of warmth, hospitality, and culinary artistry. Whether it’s dine-in, events, 
-          or catering—our experience is unforgettable.
-        </p>
-      </div>
-
-    </div>
-
-    <!-- Right panel -->
-    <div class="about-right glass-card fade-in-delay">
-      <h1 class="about-title">Our Story</h1>
-      <p>
-        Over the years, Chop Nigerian Cuisine has become a cultural landmark, serving carefully crafted dishes 
-        inspired by generations of Nigerian tradition. Our team takes pride in preparing meals with passion, 
-        creativity, and respect for authentic taste.
-      </p>
-
-      <p>
-        From Jollof Rice to Suya, Asun, Moi Moi, and an exciting range of soups, we redefine excellence with every dish. 
-        Whether you're planning an event or dining with loved ones, Chop Nigerian Cuisine brings you comfort, 
-        flavor, and elegance.
-      </p>
-
-      <a href="Menu.html" class="btn about-btn">Explore Our Menu</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============================
+    <!-- ============================
      SERVICES SECTION
 ============================= -->
-<section class="services-section container fade-in-section">
+    <section class="services-section container fade-in-section">
+      <h2 class="sec-title">What We Offer</h2>
 
-  <h2 class="sec-title">What We Offer</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Event Catering</h3>
+          <p>
+            Professional catering for birthdays, weddings, corporate meetings &
+            more.
+          </p>
+        </div>
 
-  <div class="services-grid">
+        <div class="service-card">
+          <h3>Dining Experience</h3>
+          <p>
+            Enjoy authentic Nigerian cuisine in a cozy, family-friendly
+            environment.
+          </p>
+        </div>
 
-    <div class="service-card">
-      <h3>Event Catering</h3>
-      <p>Professional catering for birthdays, weddings, corporate meetings & more.</p>
-    </div>
+        <div class="service-card">
+          <h3>Private Events</h3>
+          <p>
+            Exclusive hosting for proposals, baby showers, and curated
+            gatherings.
+          </p>
+        </div>
 
-    <div class="service-card">
-      <h3>Dining Experience</h3>
-      <p>Enjoy authentic Nigerian cuisine in a cozy, family-friendly environment.</p>
-    </div>
+        <div class="service-card">
+          <h3>Outdoor Services</h3>
+          <p>
+            We bring the chop experience to your doorstep—anywhere, anytime.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <div class="service-card">
-      <h3>Private Events</h3>
-      <p>Exclusive hosting for proposals, baby showers, and curated gatherings.</p>
-    </div>
+    <footer class="site-footer">
+      <div class="container">
+        © <span id="year"></span> Chop Nigerian Cuisine
+      </div>
+    </footer>
 
-    <div class="service-card">
-      <h3>Outdoor Services</h3>
-      <p>We bring the chop experience to your doorstep—anywhere, anytime.</p>
-    </div>
-
-  </div>
-
-</section>
-
-<footer class="site-footer">
-  <div class="container">
-    © <span id="year"></span> Chop Nigerian Cuisine
-  </div>
-</footer>
-
-<script src="Script.js"></script>
-</body>
+    <script src="Script.js"></script>
+  </body>
 </html>
-

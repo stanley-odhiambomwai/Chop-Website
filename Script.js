@@ -50,3 +50,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
+/* ============================
+   ABOUT PAGE INTERACTIONS
+============================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Parallax background
+  const aboutBg = document.querySelector(".about-hero-bg");
+
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY * 0.25;
+    if (aboutBg) {
+      aboutBg.style.transform = `translateY(${y}px) scale(1.18)`;
+    }
+  });
+
+  // Scroll reveal for services
+  const revealSections = document.querySelectorAll(".fade-in-section");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.3 });
+
+  revealSections.forEach(sec => observer.observe(sec));
+});

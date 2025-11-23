@@ -79,3 +79,88 @@ document.addEventListener("DOMContentLoaded", () => {
 
   revealSections.forEach(sec => observer.observe(sec));
 });
+
+
+/* ============================
+       ORDER PAGE JS
+============================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const items = document.querySelectorAll(".order-item");
+  const cartPanel = document.getElementById("cartPanel");
+  const cartItems = document.getElementById("cartItems");
+  const cartTotal = document.getElementById("cartTotal");
+  let cart = [];
+
+  // Add to cart
+  items.forEach(item => {
+    item.querySelector(".add-btn").addEventListener("click", () => {
+      const name = item.dataset.name;
+      const price = parseInt(item.dataset.price);
+
+      cart.push({ name, price });
+
+      updateCart();
+      cartPanel.classList.add("open");
+    });
+  });
+
+  // Update cart display
+  function updateCart() {
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      total += item.price;
+
+      cartItems.innerHTML += `
+        <div class="cart-row">
+          <span>${item.name}</span>
+          <span>₦${item.price}</span>
+          <button class="remove-btn" data-index="${index}">x</button>
+        </div>
+      `;
+    });
+
+    cartTotal.textContent = "₦" + total;
+
+    // Remove items
+    document.querySelectorAll(".remove-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        cart.splice(btn.dataset.index, 1);
+        updateCart();
+      });
+    });
+  }
+
+  /* CATEGORY FILTER */
+  const buttons = document.querySelectorAll(".cat-btn");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const cat = btn.dataset.cat;
+
+      items.forEach(item => {
+        if (cat === "all" || item.dataset.cat === cat) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+
+  /* SEARCH FUNCTION */
+  document.getElementById("searchInput").addEventListener("keyup", e => {
+    const value = e.target.value.toLowerCase();
+
+    items.forEach(item => {
+      const name = item.dataset.name.toLowerCase();
+      item.style.display = name.includes(value) ? "block" : "none";
+    });
+  });
+
+});

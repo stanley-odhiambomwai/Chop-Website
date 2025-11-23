@@ -1,52 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Place Order - Chop Nigerian Cuisine</title>
-  <link rel="stylesheet" href="Style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Your Order - Chop Nigerian Cuisine</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- NAVIGATION (with logo) -->
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="index.html">
-      <div class="logo">C</div>
-      <div class="brand-text"><strong>Chop Nigerian Cuisine</strong><span>Dining · Catering · Events</span></div>
+
+    <a class="brand" href="Home.html">
+      <img 
+        src="Images/Stock6.png" 
+        alt="Chop Nigerian Cuisine Logo"
+        class="nav-logo"
+      />
+      <div class="brand-text">
+        <strong>Chop Nigerian Cuisine</strong>
+        <span>Dining · Catering · Events</span>
+      </div>
     </a>
+
     <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="menu.html">Menu</a>
-      <a class="active" href="order.html">Place Order</a>
-      <a href="catering.html">Catering</a>
-      <a href="contact.html">Contact</a>
+      <a class="nav-link" href="Home.html">Home</a>
+      <a class="nav-link" href="About.html">About</a>
+      <a class="nav-link" href="Menu.html">Menu</a>
+      <a class="nav-link active" href="Order.html">Place Order</a>
+      <a class="nav-link" href="Catering.html">Catering</a>
+      <a class="nav-link" href="Contact.html">Contact</a>
     </nav>
+
   </div>
 </header>
 
-<main class="container content">
+<!-- =============================
+        ORDER PAGE HERO
+============================= -->
+<section class="order-hero">
+  <div class="order-hero-overlay"></div>
   <h1>Place Your Order</h1>
+  <p>Fresh, delicious, and delivered with love.</p>
+</section>
 
-  <form id="orderForm">
-    <label>Full Name<input type="text" id="oName" required></label>
-    <label>Phone Number<input type="tel" id="oPhone" required></label>
-    <label>Email<input type="email" id="oEmail"></label>
-    <label>Order Type
-      <select id="oPickup">
-        <option value="pickup">Pickup</option>
-        <option value="delivery">Delivery</option>
-      </select>
-    </label>
-    <label>Order Details<textarea id="oDetails" rows="4" required></textarea></label>
-    <button class="btn" type="submit">Submit Order</button>
-  </form>
-</main>
+<!-- =============================
+        ORDERING SYSTEM
+============================= -->
+<section class="order-section container">
 
-<footer class="site-footer">
-  <div class="container">© <span id="year4"></span> Chop Nigerian Cuisine</div>
-</footer>
+  <!-- SEARCH BAR -->
+  <div class="order-search">
+    <input type="text" id="searchInput" placeholder="Search for a dish...">
+  </div>
 
-<script src="Script.js"></script>
+  <!-- CATEGORY FILTERS -->
+  <div class="order-categories">
+    <button class="cat-btn active" data-cat="all">All</button>
+    <button class="cat-btn" data-cat="rice">Rice</button>
+    <button class="cat-btn" data-cat="soups">Soups</button>
+    <button class="cat-btn" data-cat="sides">Sides</button>
+    <button class="cat-btn" data-cat="drinks">Drinks</button>
+  </div>
+
+  <!-- MENU GRID -->
+  <div class="order-grid" id="orderGrid">
+
+    
+    <div class="order-item" data-cat="rice" data-name="Jollof Rice" data-price="1500">
+      <img src="Images/stock7.jpeg" alt="Jellof Rice">
+      <h3>Jollof Rice</h3>
+      <p>₦1500</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="order-item" data-cat="rice" data-name="Fried Rice" data-price="1500">
+      <img src="Images/stock8.jpeg" alt="Fried Rice">
+      <h3>Fried Rice</h3>
+      <p>₦1500</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="Images/stock9.jpeg" alt="Egusi Soup">
+      <h3>Egusi Soup</h3>
+      <p>₦2000</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="order-item" data-cat="soups" data-name="Afang Soup" data-price="2000">
+      <img src="Images/stock10.jpeg" alt="Afang Soup">
+      <h3>Afang Soup</h3>
+      <p>₦2000</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cartPanel">
+  <h2>Your Order</h2>
+  <div id="cartItems"></div>
+  <div class="cart-total">
+    Total: <span id="cartTotal">₦0</span>
+  </div>
+  <button class="checkout-btn">Checkout</button>
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>

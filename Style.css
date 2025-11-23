@@ -50,19 +50,18 @@ body {
   color: inherit;
 }
 
-.logo {
-  background: #7a9b0a;
-  color: white;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 10px #7a9b0a55;
+.nav-logo {
+  width: 58px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
+  transition: transform .3s ease;
 }
+
+.brand:hover .nav-logo {
+  transform: scale(1.1);
+}
+
 
 .brand-text span {
   font-size: 0.8rem;

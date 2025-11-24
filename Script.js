@@ -81,9 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* ============================
-       ORDER PAGE JS
-============================= */
+/* =========================================
+        ADVANCED ORDER PAGE CART SYSTEM
+========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -91,76 +91,109 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartPanel = document.getElementById("cartPanel");
   const cartItems = document.getElementById("cartItems");
   const cartTotal = document.getElementById("cartTotal");
+
+  // Cart array
   let cart = [];
 
-  // Add to cart
+  // -------------------------------
+  // ADD TO CART CLICK HANDLER
+  // -------------------------------
   items.forEach(item => {
     item.querySelector(".add-btn").addEventListener("click", () => {
       const name = item.dataset.name;
       const price = parseInt(item.dataset.price);
 
-      cart.push({ name, price });
+      // CHECK if item already exists
+      const existing = cart.find(cartItem => cartItem.name === name);
+
+      if (existing) {
+        existing.qty += 1;     // increase quantity
+      } else {
+        cart.push({
+          name,
+          price,
+          qty: 1
+        });
+      }
 
       updateCart();
-      cartPanel.classList.add("open");
+      cartPanel.classList.add("open");      // auto-open cart
+
+      // Add bounce animation to cart panel
+      cartPanel.style.transform = "scale(1.02)";
+      setTimeout(() => {
+        cartPanel.style.transform = "scale(1)";
+      }, 150);
     });
   });
 
-  // Update cart display
+  // UPDATE CART DISPLAY
+  
   function updateCart() {
     cartItems.innerHTML = "";
     let total = 0;
 
     cart.forEach((item, index) => {
-      total += item.price;
+      total += item.price * item.qty;
 
       cartItems.innerHTML += `
         <div class="cart-row">
-          <span>${item.name}</span>
-          <span>₦${item.price}</span>
-          <button class="remove-btn" data-index="${index}">x</button>
+          <div class="cart-row-left">
+            <strong>${item.name}</strong>
+            <p>₦${item.price} × ${item.qty}</p>
+          </div>
+
+          <div class="cart-controls">
+            <button class="qty-btn minus" data-index="${index}">−</button>
+            <span>${item.qty}</span>
+            <button class="qty-btn plus" data-index="${index}">+</button>
+            <button class="remove-btn" data-index="${index}">x</button>
+          </div>
         </div>
       `;
     });
 
     cartTotal.textContent = "₦" + total;
 
-    // Remove items
+    // Add functionality to buttons
+    addCartButtonActions();
+  }
+
+  // -------------------------------
+  // QUANTITY + REMOVE BUTTONS
+  // -------------------------------
+  function addCartButtonActions() {
+
+    // Increase Quantity
+    document.querySelectorAll(".plus").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const i = btn.dataset.index;
+        cart[i].qty += 1;
+        updateCart();
+      });
+    });
+
+    // Decrease Quantity
+    document.querySelectorAll(".minus").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const i = btn.dataset.index;
+        if (cart[i].qty > 1) {
+          cart[i].qty -= 1;
+        } else {
+          cart.splice(i, 1);
+        }
+        updateCart();
+      });
+    });
+
+    // Remove item entirely
     document.querySelectorAll(".remove-btn").forEach(btn => {
       btn.addEventListener("click", () => {
-        cart.splice(btn.dataset.index, 1);
+        const i = btn.dataset.index;
+        cart.splice(i, 1);
         updateCart();
       });
     });
   }
-
-  /* CATEGORY FILTER */
-  const buttons = document.querySelectorAll(".cat-btn");
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const cat = btn.dataset.cat;
-
-      items.forEach(item => {
-        if (cat === "all" || item.dataset.cat === cat) {
-          item.style.display = "block";
-        } else {
-          item.style.display = "none";
-        }
-      });
-    });
-  });
-
-  /* SEARCH FUNCTION */
-  document.getElementById("searchInput").addEventListener("keyup", e => {
-    const value = e.target.value.toLowerCase();
-
-    items.forEach(item => {
-      const name = item.dataset.name.toLowerCase();
-      item.style.display = name.includes(value) ? "block" : "none";
-    });
-  });
 
 });

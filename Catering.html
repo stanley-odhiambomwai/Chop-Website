@@ -1,34 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Catering Inquiry</title>
-  <link rel="stylesheet" href="Style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering Services - Chop Nigerian Cuisine</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- same header -->
+<!-- NAVIGATION (with logo) -->
+<header class="site-header">
+  <div class="container">
 
-<main class="container content">
-  <h1>Catering Inquiry</h1>
-  <form id="caterForm">
-    <label>Name<input type="text" id="cName" required></label>
-    <label>Phone<input type="tel" id="cPhone" required></label>
-    <label>Email<input type="email" id="cEmail" required></label>
-    <label>Date<input type="date" id="cDate"></label>
-    <label>Guests<input type="number" id="cGuests"></label>
-    <label>Details<textarea id="cDetails" rows="4" required></textarea></label>
-    <button class="btn">Submit Inquiry</button>
-  </form>
-</main>
+    <a class="brand" href="Home.html">
+      <img 
+        src="Images/Stock6.png" 
+        alt="Chop Nigerian Cuisine Logo"
+        class="nav-logo"
+      />
+      <div class="brand-text">
+        <strong>Chop Nigerian Cuisine</strong>
+        <span>Dining · Catering · Events</span>
+      </div>
+    </a>
+
+    <nav class="main-nav">
+      <a class="nav-link" href="Home.html">Home</a>
+      <a class="nav-link" href="About.html">About</a>
+      <a class="nav-link" href="Menu.html">Menu</a>
+      <a class="nav-link" href="Order.html">Place Order</a>
+      <a class="nav-link active" href="Catering.html">Catering</a>
+      <a class="nav-link" href="Contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ============================
+       CATERING HERO SECTION
+============================= -->
+<section class="catering-hero">
+  <div class="catering-overlay"></div>
+  <h1>Catering Services</h1>
+  <p>Exceptional food. Memorable events.</p>
+</section>
+
+<!-- ============================
+       CATERING FEATURES
+============================= -->
+<section class="catering-services container">
+
+  <h2 class="section-title">We Cater All Events</h2>
+
+  <div class="cater-grid">
+
+    <div class="cater-card fade-in">
+      <img src="/mnt/data/stock.jpg">
+      <h3>Weddings</h3>
+      <p>Premium catering for traditional and modern weddings.</p>
+    </div>
+
+    <div class="cater-card fade-in">
+      <img src="/mnt/data/stock.jpg">
+      <h3>Corporate Events</h3>
+      <p>Professional catering for business meetings & conferences.</p>
+    </div>
+
+    <div class="cater-card fade-in">
+      <img src="/mnt/data/stock.jpg">
+      <h3>Birthdays</h3>
+      <p>Delicious food to make your celebration special.</p>
+    </div>
+
+    <div class="cater-card fade-in">
+      <img src="/mnt/data/stock.jpg">
+      <h3>Private Parties</h3>
+      <p>Custom menu options for all exclusive gatherings.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============================
+       CATERING GALLERY
+============================= -->
+<section class="catering-gallery container">
+
+  <h2 class="section-title">Our Event Dishes</h2>
+
+  <div class="gallery-grid">
+    <img src="/mnt/data/stock.jpg" class="gallery-img">
+    <img src="/mnt/data/stock.jpg" class="gallery-img">
+    <img src="/mnt/data/stock.jpg" class="gallery-img">
+    <img src="/mnt/data/stock.jpg" class="gallery-img">
+  </div>
+
+</section>
+
+<!-- ============================
+       CATERING INQUIRY FORM
+============================= -->
+<section class="catering-form-section">
+  <div class="container">
+
+    <h2 class="section-title white">Catering Inquiry Form</h2>
+
+    <form class="catering-form">
+
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" placeholder="Your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="Your email address" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" placeholder="Your phone number" required>
+      </div>
+
+      <div class="form-group">
+        <label>Event Type</label>
+        <select required>
+          <option>Wedding</option>
+          <option>Birthday Party</option>
+          <option>Corporate Event</option>
+          <option>Private Gathering</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Message / Details</label>
+        <textarea placeholder="Tell us more about your event..." rows="5"></textarea>
+      </div>
+
+      <button class="btn form-btn">Submit Inquiry</button>
+
+    </form>
+
+  </div>
+</section>
 
 <footer class="site-footer">
   <div class="container">
-    © <span id="year5"></span> Chop Nigerian Cuisine
+    © <span id="year"></span> Chop Nigerian Cuisine
   </div>
 </footer>
 
 <script src="Script.js"></script>
 </body>
 </html>
+

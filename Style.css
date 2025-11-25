@@ -553,3 +553,18 @@ body {
   color: #7a9b0a;
   margin-top: 4px;
 }
+
+/* ================================
+      MENU PAGE ANIMATIONS
+================================*/
+
+.menu-hidden {
+  opacity: 0;
+  transform: translateY(25px) scale(0.97);
+  transition: all 0.6s ease, transform 0.6s ease;
+}
+
+.menu-show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

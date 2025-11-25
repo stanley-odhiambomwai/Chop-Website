@@ -719,3 +719,14 @@ body {
 .form-btn:hover {
   transform: scale(1.05);
 }
+
+.fade-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .7s ease;
+}
+
+.fade-show {
+  opacity: 1;
+  transform: translateY(0);
+}

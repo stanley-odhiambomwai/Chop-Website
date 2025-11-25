@@ -568,3 +568,154 @@ body {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+
+
+/* ================================
+        CATERING PAGE
+================================*/
+
+.catering-hero {
+  position: relative;
+  height: 45vh;
+  background: url('Images/stock3.webp') center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.catering-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(3px);
+}
+
+.catering-hero h1 {
+  position: relative;
+  font-size: 3rem;
+}
+
+.catering-services {
+  margin-top: 4rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: "Playfair Display", serif;
+}
+
+.white {
+  color: white !important;
+}
+
+.cater-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 1.6rem;
+}
+
+.cater-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: .3s;
+}
+
+.cater-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.cater-card:hover {
+  transform: translateY(-8px);
+}
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: .3s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.04);
+}
+
+/* FORM SECTION */
+.catering-form-section {
+  background: url('Images/Form.jpeg') center/cover fixed;
+  padding: 4rem 0;
+  position: relative;
+}
+
+.catering-form-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.catering-form {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255,255,255,0.15);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+.form-group {
+  margin-bottom: 1.4rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: .4rem;
+  color: white;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+
+.form-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #7a9b0a, #b33);
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  margin-top: 1rem;
+  transition: .3s;
+}
+
+.form-btn:hover {
+  transform: scale(1.05);
+}

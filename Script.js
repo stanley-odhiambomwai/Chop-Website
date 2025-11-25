@@ -266,3 +266,40 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
+
+/* ==================================================
+      CATERING FORM SUCCESS POPUP
+==================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cateringForm = document.querySelector(".catering-form");
+
+  if (cateringForm) {
+    cateringForm.addEventListener("submit", (e) => {
+      setTimeout(() => {
+        showSuccessPopup();
+      }, 800);
+    });
+  }
+});
+
+function showSuccessPopup() {
+  const popup = document.createElement("div");
+  popup.className = "success-popup";
+  popup.innerHTML = `
+    <div class="popup-box">
+      <h2>Inquiry Submitted 🎉</h2>
+      <p>Thank you! Your catering request has been sent successfully.<br>
+      We will contact you shortly.</p>
+      <button class="close-popup">Close</button>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector(".close-popup").addEventListener("click", () => {
+    popup.remove();
+  });
+}

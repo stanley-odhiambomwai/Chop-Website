@@ -241,3 +241,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
+/* ========================================
+      CATERING PAGE ANIMATIONS
+======================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Fade-in cards
+  const cards = document.querySelectorAll(".cater-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-show");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  cards.forEach(card => {
+    card.classList.add("fade-hidden");
+    observer.observe(card);
+  });
+
+});

@@ -197,3 +197,47 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+
+/* =========================================
+     MENU PAGE INTERACTIVE EFFECTS
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* -------------------------------
+     PARALLAX EFFECT FOR MENU HERO
+  --------------------------------*/
+  const menuHero = document.querySelector(".menu-hero");
+
+  window.addEventListener("scroll", () => {
+    if (!menuHero) return;
+    let scrollY = window.scrollY * 0.35;
+    menuHero.style.backgroundPositionY = `${scrollY}px`;
+  });
+
+  /* -------------------------------
+     SMOOTH REVEAL OF MENU SECTIONS
+  --------------------------------*/
+  const revealOptions = {
+    threshold: 0.25,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const revealCallback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("menu-show");
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+
+  document.querySelectorAll(".menu-item").forEach(item => {
+    item.classList.add("menu-hidden");
+    revealObserver.observe(item);
+  });
+
+});

@@ -776,3 +776,74 @@ body {
     opacity: 1;
   }
 }
+
+
+/* ================================
+       CONTACT PAGE
+================================*/
+
+.contact-hero {
+  background: url('Images/stock3.webp') center/cover fixed;
+  padding: 4rem 0;
+  text-align: center;
+  color: white;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.contact-hero h1 {
+  position: relative;
+  font-size: 3rem;
+}
+
+.contact-info {
+  margin: 3rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.07);
+  transition: .3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+}
+
+/* CONTACT FORM SECTION */
+.contact-form-section {
+  background: url('Images/Contact.jpeg') center/cover fixed;
+  padding: 4rem 0;
+  position: relative;
+}
+
+.contact-form-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.contact-form {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255,255,255,0.15);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}

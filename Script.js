@@ -303,3 +303,20 @@ function showSuccessPopup() {
     popup.remove();
   });
 }
+
+
+/* ==================================================
+      CONTACT FORM SUCCESS POPUP
+==================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.querySelector(".contact-form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", () => {
+      setTimeout(() => {
+        showSuccessPopup();
+      }, 800);
+    });
+  }
+});

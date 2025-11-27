@@ -203,6 +203,53 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+/* =========================================
+        CHECKOUT FUNCTIONALITY
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutBtn = document.getElementById("checkoutBtn");
+
+  // If there is no checkout button, stop here (prevents errors)
+  if (!checkoutBtn) return;
+
+  checkoutBtn.addEventListener("click", () => {
+    
+    // If cart is empty
+    if (cart.length === 0) {
+      alert("Your cart is empty. Add items before checking out.");
+      return;
+    }
+
+    // Build full summary
+    let summary = "🛒 ORDER SUMMARY\n\n";
+    let total = 0;
+
+    cart.forEach(item => {
+      summary += `${item.name} — ₦${item.price} x ${item.qty}\n`;
+      total += item.price * item.qty;
+    });
+
+    summary += `\nTOTAL: ₦${total}\n\nProceed with checkout?`;
+
+    // Confirm checkout
+    const confirmCheckout = confirm(summary);
+
+    if (confirmCheckout) {
+      alert("Thank you! Your order has been received. We will contact you shortly.");
+
+      // Clear cart
+      cart = [];
+      updateCart();
+
+      // Hide cart panel after checkout
+      const cartPanel = document.getElementById("cartPanel");
+      if (cartPanel) {
+        cartPanel.classList.remove("open");
+      }
+    }
+  });
+});
 
 
 /* =========================================

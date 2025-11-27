@@ -210,7 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const checkoutBtn = document.getElementById("checkoutBtn");
 
-  // If there is no checkout button, stop here (prevents errors)
   if (!checkoutBtn) return;
 
   checkoutBtn.addEventListener("click", () => {

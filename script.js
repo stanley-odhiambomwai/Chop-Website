@@ -326,3 +326,48 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+// ===== MOBILE MENU AUTO-CLOSE ON LINK CLICK =====
+const navLinks = document.querySelectorAll(".main-nav .nav-link");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (mainNav.classList.contains("open")) {
+      mainNav.classList.remove("open");
+      navToggle.classList.remove("active");
+    }
+  });
+});
+
+// ===== SMOOTH SCROLL FOR INTERNAL LINKS =====
+navLinks.forEach(link => {
+  if (link.hash) {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(link.hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+});
+
+// ===== SCROLL ACTIVE LINK HIGHLIGHT =====
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 80; // offset for sticky header
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
+  });
+});

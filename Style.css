@@ -360,7 +360,7 @@ body {
 .order-hero {
   position: relative;
   height: 45vh;
-  background: url('Images/stock3.webp') center/cover;
+  background: url('images/stock3.webp') center/cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -485,7 +485,7 @@ body {
 .menu-hero {
   position: relative;
   height: 45vh;
-  background: url('Images/stock3.webp') center/cover;
+  background: url('images/stock3.webp') center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -577,7 +577,7 @@ body {
 .catering-hero {
   position: relative;
   height: 45vh;
-  background: url('Images/stock3.webp') center/cover;
+  background: url('images/stock3.webp') center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -662,7 +662,7 @@ body {
 
 /* FORM SECTION */
 .catering-form-section {
-  background: url('Images/Form.jpeg') center/cover fixed;
+  background: url('images/Form.jpeg') center/cover fixed;
   padding: 4rem 0;
   position: relative;
 }
@@ -783,7 +783,7 @@ body {
 ================================*/
 
 .contact-hero {
-  background: url('Images/stock3.webp') center/cover fixed;
+  background: url('images/stock3.webp') center/cover fixed;
   padding: 4rem 0;
   text-align: center;
   color: white;
@@ -824,7 +824,7 @@ body {
 
 /* CONTACT FORM SECTION */
 .contact-form-section {
-  background: url('Images/Contact.jpeg') center/cover fixed;
+  background: url('images/Contact.jpeg') center/cover fixed;
   padding: 4rem 0;
   position: relative;
 }

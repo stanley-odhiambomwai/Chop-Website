@@ -4,52 +4,58 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const heroImg = document.querySelector(".hero-img");
-
   /* ---------------------------------------
-     PARALLAX SCROLL FOR HERO IMAGE
+     HERO IMAGE PARALLAX SCROLL
   ---------------------------------------- */
+  const heroImg = document.querySelector(".hero-img");
+  const header = document.querySelector(".site-header");
+
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
-    heroImg.style.transform =
-      `translateY(${scrollY * 0.25}px) scale(1.20)`;
+
+    // Parallax effect for hero image
+    if (heroImg) {
+      heroImg.style.transform = `translateY(${scrollY * 0.25}px) scale(1.20)`;
+    }
+
+    // Subtle header shadow on scroll
+    if (header) {
+      if (scrollY > 30) {
+        header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.15)";
+      } else {
+        header.style.boxShadow = "none";
+      }
+    }
   });
 
   /* ---------------------------------------
      FLOATING ACTION BUTTON (ORDER NOW)
   ---------------------------------------- */
   const fab = document.getElementById("fab");
-  fab.addEventListener("click", () => {
-    window.location.href = "Order.html";
-  });
+  if (fab) {
+    fab.addEventListener("click", () => {
+      // Make sure your HTML file is named exactly 'order.html'
+      window.location.href = "order.html";
+    });
+  }
 
   /* ---------------------------------------
      SMOOTH NAVIGATION HIGHLIGHT EFFECT
   ---------------------------------------- */
   const navLinks = document.querySelectorAll(".nav-link");
-  navLinks.forEach(link => {
-    link.addEventListener("mouseenter", () => {
-      link.style.transform = "translateY(-3px)";
+  if (navLinks.length) {
+    navLinks.forEach(link => {
+      link.addEventListener("mouseenter", () => {
+        link.style.transform = "translateY(-3px)";
+      });
+      link.addEventListener("mouseleave", () => {
+        link.style.transform = "translateY(0)";
+      });
     });
-    link.addEventListener("mouseleave", () => {
-      link.style.transform = "translateY(0)";
-    });
-  });
-
-  /* ---------------------------------------
-     SUBTLE HEADER SHADOW ON SCROLL
-  ---------------------------------------- */
-  const header = document.querySelector(".site-header");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 30) {
-      header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.15)";
-    } else {
-      header.style.boxShadow = "none";
-    }
-  });
+  }
 
 });
+
 
 
 /* ============================

@@ -371,3 +371,18 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
+// Mobile menu toggle
+const navToggle = document.getElementById("nav-toggle");
+const mainNav = document.querySelector(".main-nav");
+
+navToggle.addEventListener("click", () => {
+  mainNav.classList.toggle("open");
+});
+
+document.querySelectorAll(".main-nav .nav-link").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+  });
+});

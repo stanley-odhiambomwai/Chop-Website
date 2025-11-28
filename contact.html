@@ -4,35 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Chop Nigerian Cuisine</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- =============================
+         NAVBAR
+============================= -->
 <header class="site-header">
   <div class="container">
 
     <a class="brand" href="index.html">
-      <img 
-        src="images/Stock6.png" 
-        alt="Chop Nigerian Cuisine Logo"
-        class="nav-logo"
-      />
+      <img src="images/Stock6.png" alt="Chop Nigerian Cuisine Logo" class="nav-logo" />
       <div class="brand-text">
         <strong>Chop Nigerian Cuisine</strong>
         <span>Dining · Catering · Events</span>
       </div>
     </a>
 
-
-      <!-- Hamburger button for mobile -->
     <button id="nav-toggle" class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-    
+
     <nav class="main-nav">
       <a class="nav-link" href="index.html">Home</a>
       <a class="nav-link" href="about.html">About</a>
@@ -41,46 +40,55 @@
       <a class="nav-link" href="catering.html">Catering</a>
       <a class="nav-link active" href="contact.html">Contact</a>
     </nav>
+
   </div>
 </header>
 
 
-<!-- CONTACT HERO -->
+<!-- =============================
+        CONTACT HERO
+============================= -->
 <section class="contact-hero">
   <h1>Contact Us</h1>
   <p>We’re here to serve you delicious meals and unforgettable experiences.</p>
 </section>
 
-<!-- CONTACT INFO -->
-<section class="contact-info container">
 
-  <div class="contact-card fade-in">
-    <h3>📍 Our Location</h3>
-    <p>Chop Nigerian Cuisine</p>
-    <p>123 Restaurant Avenue</p>
-    <p>Lagos, Nigeria</p>
+<!-- =============================
+      CONTACT INFORMATION
+============================= -->
+<section class="contact-info">
+
+  <div class="contact-card">
+    <h3><i class="fa-solid fa-envelope"></i> Email Us</h3>
+    <p>Reach us anytime for inquiries or support.</p>
+    <a href="mailto:angelonons@gmail.com">angelonons@gmail.com</a>
   </div>
 
-  <div class="contact-card fade-in">
-    <h3>📞 Phone</h3>
-    <p>+1 (832) 994-1233</p>
-    <p>+1 (832) 994-1233</p>
+  <div class="contact-card">
+    <h3><i class="fa-brands fa-instagram"></i> Instagram</h3>
+    <p>Follow us for updates and promotions.</p>
+    <a href="https://instagram.com/chopnigeriancuisine" target="_blank">@chopnigeriancuisine</a>
   </div>
 
-  <div class="contact-card fade-in">
-    <h3>📧 Email</h3>
-    <p>angelonons@gmail.com</p>
+  <div class="contact-card">
+    <h3><i class="fa-brands fa-facebook"></i> Facebook</h3>
+    <p>Stay connected with our latest activities.</p>
+    <a href="https://facebook.com/chopnigeriancuisine" target="_blank">@chopnigeriancuisine</a>
   </div>
 
-  <div class="contact-card fade-in">
-    <h3>🕓 Opening Hours</h3>
-    <p>Mon – Fri: 10am – 10pm</p>
-    <p>Sat – Sun: 11am – 11pm</p>
+  <div class="contact-card">
+    <h3><i class="fa-solid fa-clock"></i> Business Hours</h3>
+    <p><strong>Mon – Sat:</strong> 10:00 AM – 9:00 PM</p>
+    <p><strong>Sunday:</strong> Closed</p>
   </div>
 
 </section>
 
-<!-- CONTACT FORM -->
+
+<!-- =============================
+        CONTACT FORM
+============================= -->
 <section class="contact-form-section">
   <div class="container">
 
@@ -107,14 +115,17 @@
         <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
       </div>
 
-      <button class="btn form-btn">Send Message</button>
+      <button class="btn form-btn" type="submit">Send Message</button>
 
     </form>
 
   </div>
 </section>
 
-<!-- FOOTER -->
+
+<!-- =============================
+             FOOTER
+============================= -->
 <footer class="site-footer">
   <div class="container">
     © <span id="year"></span> Chop Nigerian Cuisine

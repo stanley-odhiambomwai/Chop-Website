@@ -250,6 +250,104 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* =========================================
+   ADVANCED CHECKOUT SYSTEM (FINAL VERSION)
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  const cartPanel = document.getElementById("cartPanel");
+
+  if (!checkoutBtn) return;
+
+  checkoutBtn.addEventListener("click", () => {
+
+    if (cart.length === 0) {
+      showPopup("Your cart is empty!", "Please add items before checking out.");
+      return;
+    }
+
+    // Build detailed receipt
+    let receipt = "<strong>ORDER SUMMARY</strong><br><br>";
+    let total = 0;
+
+    cart.forEach(item => {
+      const line = `${item.name} — ₦${item.price} × ${item.qty}`;
+      receipt += line + "<br>";
+      total += item.price * item.qty;
+    });
+
+    receipt += `<br><strong>Total: ₦${total}</strong><br><br>`;
+    receipt += "Proceed with order?";
+
+    // Custom confirm popup
+    showConfirmPopup(receipt, () => {
+      
+      showPopup(
+        "Order Successful 🎉",
+        "Thank you! Your order has been received. We will contact you shortly."
+      );
+
+      // Clear cart
+      cart = [];
+      updateCart();
+      cartPanel.classList.remove("open");
+    });
+  });
+});
+
+
+/* ============================
+   POPUP FUNCTIONS
+============================ */
+
+function showPopup(title, message) {
+  const popup = document.createElement("div");
+  popup.className = "success-popup";
+
+  popup.innerHTML = `
+    <div class="popup-box">
+      <h2>${title}</h2>
+      <p>${message}</p>
+      <button class="close-popup">Close</button>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector(".close-popup").addEventListener("click", () => {
+    popup.remove();
+  });
+}
+
+
+function showConfirmPopup(message, onConfirm) {
+  const popup = document.createElement("div");
+  popup.className = "success-popup";
+
+  popup.innerHTML = `
+    <div class="popup-box">
+      <p>${message}</p>
+
+      <div class="popup-actions">
+        <button class="btn-yes">Yes</button>
+        <button class="btn-no">No</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector(".btn-yes").addEventListener("click", () => {
+    popup.remove();
+    onConfirm();    
+  });
+
+  popup.querySelector(".btn-no").addEventListener("click", () => {
+    popup.remove();
+  });
+}
+
 
 /* =========================================
      MENU PAGE INTERACTIVE EFFECTS

@@ -1,138 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Chop Nigerian Cuisine</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Chop Nigerian Cuisine</title>
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
-<!-- =============================
+  <body>
+    <!-- =============================
          NAVBAR
 ============================= -->
-<header class="site-header">
-  <div class="container">
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <img
+            src="images/Stock6.png"
+            alt="Chop Nigerian Cuisine Logo"
+            class="nav-logo"
+          />
+          <div class="brand-text">
+            <strong>Chop Nigerian Cuisine</strong>
+            <span>Dining · Catering · Events</span>
+          </div>
+        </a>
 
-    <a class="brand" href="index.html">
-      <img src="images/Stock6.png" alt="Chop Nigerian Cuisine Logo" class="nav-logo" />
-      <div class="brand-text">
-        <strong>Chop Nigerian Cuisine</strong>
-        <span>Dining · Catering · Events</span>
+        <button id="nav-toggle" class="nav-toggle">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link" href="menu.html">Menu</a>
+          <a class="nav-link" href="order.html">Place Order</a>
+          <a class="nav-link" href="catering.html">Catering</a>
+          <a class="nav-link active" href="contact.html">Contact</a>
+        </nav>
       </div>
-    </a>
+    </header>
 
-    <button id="nav-toggle" class="nav-toggle">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="main-nav">
-      <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link" href="about.html">About</a>
-      <a class="nav-link" href="menu.html">Menu</a>
-      <a class="nav-link" href="order.html">Place Order</a>
-      <a class="nav-link" href="catering.html">Catering</a>
-      <a class="nav-link active" href="contact.html">Contact</a>
-    </nav>
-
-  </div>
-</header>
-
-
-<!-- =============================
+    <!-- =============================
         CONTACT HERO
 ============================= -->
-<section class="contact-hero">
-  <h1>Contact Us</h1>
-  <p>We’re here to serve you delicious meals and unforgettable experiences.</p>
-</section>
+    <section class="contact-hero">
+      <h1>Contact Us</h1>
+      <p>
+        We’re here to serve you delicious meals and unforgettable experiences.
+      </p>
+    </section>
 
-
-<!-- =============================
+    <!-- =============================
       CONTACT INFORMATION
 ============================= -->
-<section class="contact-info">
+    <section class="contact-info">
 
-  <div class="contact-card">
-    <h3><i class="fa-solid fa-envelope"></i> Email Us</h3>
-    <p>Reach us anytime for inquiries or support.</p>
-    <a href="mailto:angelonons@gmail.com">angelonons@gmail.com</a>
-  </div>
+      <!-- ADDRESS CARD -->
+      <div class="contact-card">
+        <h3><i class="fa-solid fa-map-location-dot"></i> Our Location</h3>
+        <p>Come visit us anytime at our restaurant location.</p>
+        <p>
+          <strong>130 Atiku Abubakar Road</strong><br />
+          Opposite Enen Afaha Street
+        </p>
+      </div>
 
-  <div class="contact-card">
-    <h3><i class="fa-brands fa-instagram"></i> Instagram</h3>
-    <p>Follow us for updates and promotions.</p>
-    <a href="https://instagram.com/chopnigeriancuisine" target="_blank">@chopnigeriancuisine</a>
-  </div>
+      <!-- PHONE NUMBER -->
+      <div class="contact-card">
+        <h3><i class="fa-solid fa-phone"></i> Call Us</h3>
+        <p>We're available for quick inquiries and orders.</p>
+        <a href="tel:08146020033"><strong>08146020033</strong></a>
+      </div>
 
-  <div class="contact-card">
-    <h3><i class="fa-brands fa-facebook"></i> Facebook</h3>
-    <p>Stay connected with our latest activities.</p>
-    <a href="https://facebook.com/chopnigeriancuisine" target="_blank">@chopnigeriancuisine</a>
-  </div>
+      <!-- EMAIL -->
+      <div class="contact-card">
+        <h3><i class="fa-solid fa-envelope"></i> Email Us</h3>
+        <p>Reach us anytime for inquiries or support.</p>
+        <a href="info@chopnigeriancuisine.com ">info@chopnigeriancuisine.com </a>
+      </div>
 
-  <div class="contact-card">
-    <h3><i class="fa-solid fa-clock"></i> Business Hours</h3>
-    <p><strong>Mon – Sat:</strong> 10:00 AM – 9:00 PM</p>
-    <p><strong>Sunday:</strong> Closed</p>
-  </div>
+      <!-- INSTAGRAM -->
+      <div class="contact-card">
+        <h3><i class="fa-brands fa-instagram"></i> Instagram</h3>
+        <p>Follow us for updates and promotions.</p>
+        <a href="https://instagram.com/chopnigeriancuisine" target="_blank">
+          @chopnigeriancuisine
+        </a>
+      </div>
 
-</section>
+      <!-- FACEBOOK -->
+      <div class="contact-card">
+        <h3><i class="fa-brands fa-facebook"></i> Facebook</h3>
+        <p>Stay connected with our latest activities.</p>
+        <a href="https://facebook.com/chopnigeriancuisine" target="_blank">
+          @chopnigeriancuisine
+        </a>
+      </div>
 
+      <!-- BUSINESS HOURS -->
+      <div class="contact-card">
+        <h3><i class="fa-solid fa-clock"></i> Business Hours</h3>
+        <p><strong>Mon – Sat:</strong> 9:00 AM – 9:00 PM</p>
+        <p><strong>Sunday:</strong> 3:00 PM – 9:00 PM</p>
+      </div>
 
-<!-- =============================
+    </section>
+
+    <!-- =============================
         CONTACT FORM
 ============================= -->
-<section class="contact-form-section">
-  <div class="container">
+    <section class="contact-form-section">
+      <div class="container">
+        <h2 class="section-title white">Send Us a Message</h2>
 
-    <h2 class="section-title white">Send Us a Message</h2>
+        <form
+          class="contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="access_key"
+            value="12adf2c9-0aee-4e71-bb32-f13aca7a9bd1"
+          />
+          <input
+            type="hidden"
+            name="subject"
+            value="New Contact Message from Chop Nigerian Cuisine"
+          />
+          <input
+            type="hidden"
+            name="from_name"
+            value="Chop Nigerian Cuisine Website"
+          />
 
-    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-      
-      <input type="hidden" name="access_key" value="12adf2c9-0aee-4e71-bb32-f13aca7a9bd1">
-      <input type="hidden" name="subject" value="New Contact Message from Chop Nigerian Cuisine">
-      <input type="hidden" name="from_name" value="Chop Nigerian Cuisine Website">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your name" required />
+          </div>
 
-      <div class="form-group">
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Your name" required>
+          <div class="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Message</label>
+            <textarea
+              name="message"
+              placeholder="Your message..."
+              rows="5"
+              required
+            ></textarea>
+          </div>
+
+          <button class="btn form-btn" type="submit">Send Message</button>
+        </form>
       </div>
+    </section>
 
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" placeholder="Your email" required>
-      </div>
-
-      <div class="form-group">
-        <label>Message</label>
-        <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
-      </div>
-
-      <button class="btn form-btn" type="submit">Send Message</button>
-
-    </form>
-
-  </div>
-</section>
-
-
-<!-- =============================
+    <!-- =============================
              FOOTER
 ============================= -->
-<footer class="site-footer">
-  <div class="container">
-    © <span id="year"></span> Chop Nigerian Cuisine
-  </div>
-</footer>
+    <footer class="site-footer">
+      <div class="container">
+        © <span id="year"></span> Chop Nigerian Cuisine
+      </div>
+    </footer>
 
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

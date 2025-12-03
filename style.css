@@ -117,6 +117,12 @@ body {
   
   /* Slight softening to remove harsh tones */
   image-rendering: auto;
+   /* Clearer, brighter, more vibrant */
+  transform: scale(1.06);
+  transition: transform 1.3s ease-out, filter 1s ease-out;
+
+  filter: brightness(1.22) contrast(1.08) saturate(1.20);
+
 }
 
 

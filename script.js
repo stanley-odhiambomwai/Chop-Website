@@ -58,33 +58,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* ============================
-   ABOUT PAGE INTERACTIONS
-============================ */
-
+// ==============================
+// About page interactions
+// ==============================
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Parallax background
+  // Parallax background for about hero
   const aboutBg = document.querySelector(".about-hero-bg");
-
   window.addEventListener("scroll", () => {
-    const y = window.scrollY * 0.25;
+    const y = window.scrollY * 0.22; // gentle parallax
     if (aboutBg) {
-      aboutBg.style.transform = `translateY(${y}px) scale(1.18)`;
+      aboutBg.style.transform = `translateY(${y}px) scale(1.12)`;
     }
   });
 
-  // Scroll reveal for services
-  const revealSections = document.querySelectorAll(".fade-in-section");
+  // Parallax subtle for video frame background (optional)
+  const videoFrame = document.querySelector(".about-video-frame");
+  window.addEventListener("scroll", () => {
+    if (!videoFrame) return;
+    const rect = videoFrame.getBoundingClientRect();
+    // small parallax effect only when visible
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const offset = Math.min(Math.max((window.innerHeight - rect.top) / window.innerHeight, 0), 1);
+      const scale = 1.03 + (offset * 0.02);
+      videoFrame.style.setProperty('--parallax-scale', scale);
+    }
+  });
 
-  const observer = new IntersectionObserver(entries => {
+  // Scroll reveal for any fade-in sections
+  const revealSections = document.querySelectorAll(".fade-in-section");
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add("show");
     });
-  }, { threshold: 0.3 });
-
+  }, { threshold: 0.28 });
   revealSections.forEach(sec => observer.observe(sec));
+
+  // Re-init Instagram embeds (if script loaded before block)
+  if (window.instgrm && window.instgrm.Embeds) {
+    try { window.instgrm.Embeds.process(); } catch(e) { /* safe fail */ }
+  }
+
+  // small accessibility: set current year
+  const y = new Date().getFullYear();
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = y;
+
+  // mobile menu toggle (basic)
+  const navToggle = document.getElementById("nav-toggle");
+  const mainNav = document.querySelector(".main-nav");
+  if (navToggle && mainNav) {
+    navToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("open");
+      navToggle.classList.toggle("open");
+    });
+  }
 });
+
+
 
 
 /* =========================================
